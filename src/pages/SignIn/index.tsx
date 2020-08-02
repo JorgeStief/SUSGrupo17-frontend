@@ -2,6 +2,7 @@ import React, { FormEvent, ChangeEvent, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './style.css';
 import { FaUser, FaKey } from 'react-icons/fa';
+
 import SUS from '../../assets/sus.png';
 // import { Container } from './styles';
 import api from '../../services/api';
@@ -39,7 +40,7 @@ const Login: React.FC = () => {
         history.push('/menu');
       } catch (err) {
         console.log(err);
-        setError('Cpf/Número do SUS e/ou senha incorretos ');
+        setError('Dados incorretos!');
       }
     }
   }
@@ -112,7 +113,7 @@ const Login: React.FC = () => {
                 </button>
                 <span className="create-account">
                   Crie a sua conta aqui?
-                  <a href="#"> Cadastre-se</a>
+                  <Link to="/cadastrar"> Cadastre-se</Link>
                 </span>
               </form>
             </div>

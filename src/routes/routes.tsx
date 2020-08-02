@@ -7,7 +7,8 @@ import {
 } from 'react-router-dom';
 
 import React from 'react';
-import Login from '../pages/Login';
+import SignIn from '../pages/SignIn';
+import SignUp from '../pages/SignUp';
 import { isAuthenticated } from '../services/auth';
 
 interface Props {
@@ -34,7 +35,8 @@ const Routes: React.FC = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route component={Login} path="/" exact />
+        <Route component={SignIn} path="/" exact />
+        <PrivateRoute component={SignUp} path="/cadastrar" />
         <PrivateRoute component={() => <h1>SignUp</h1>} path="/menu" />
         <Route path="*" component={() => <h1>Page not found</h1>} />
         {/* <Route component={SearchPoint} path="/search-point" /> */}
