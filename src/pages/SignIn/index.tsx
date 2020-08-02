@@ -14,7 +14,6 @@ const Login: React.FC = () => {
   const [formData, setFormData] = useState({
     cpfOrSusCardNumber: '',
     password: '',
-    error: '',
   });
   const [error, setError] = useState('');
 
@@ -112,8 +111,8 @@ const Login: React.FC = () => {
                   Entrar
                 </button>
                 <span className="create-account">
-                  Crie a sua conta aqui?
-                  <Link to="/cadastrar"> Cadastre-se</Link>
+                  Não possui conta?&nbsp;
+                  <Link to="/cadastrar">Cadastre-se</Link>
                 </span>
               </form>
             </div>

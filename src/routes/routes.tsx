@@ -36,8 +36,8 @@ const Routes: React.FC = () => {
     <BrowserRouter>
       <Switch>
         <Route component={SignIn} path="/" exact />
-        <PrivateRoute component={SignUp} path="/cadastrar" />
-        <PrivateRoute component={() => <h1>SignUp</h1>} path="/menu" />
+        <Route component={SignUp} path="/cadastrar" />
+        <PrivateRoute component={() => <h1>Menu</h1>} path="/menu" />
         <Route path="*" component={() => <h1>Page not found</h1>} />
         {/* <Route component={SearchPoint} path="/search-point" /> */}
       </Switch>
