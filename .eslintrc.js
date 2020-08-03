@@ -11,5 +11,6 @@ module.exports = {
     "jsx-a11y/anchor-is-valid": "off",
     "react/jsx-props-no-spreading": "off",
     "jsx-a11y/control-has-associated-label": "off",
+    "jsx-a11y/anchor-is-valid": "off",
   },
 }

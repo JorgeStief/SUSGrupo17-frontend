@@ -9,6 +9,8 @@ import {
 import React from 'react';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
+import Menu from '../pages/Menu';
+import History from '../pages/History';
 import { isAuthenticated } from '../services/auth';
 
 interface Props {
@@ -37,7 +39,8 @@ const Routes: React.FC = () => {
       <Switch>
         <Route component={SignIn} path="/" exact />
         <Route component={SignUp} path="/cadastrar" />
-        <PrivateRoute component={() => <h1>Menu</h1>} path="/menu" />
+        <PrivateRoute component={Menu} path="/consulta/marcar" />
+        <PrivateRoute component={History} path="/consulta/historico" />
         <Route path="*" component={() => <h1>Page not found</h1>} />
         {/* <Route component={SearchPoint} path="/search-point" /> */}
       </Switch>

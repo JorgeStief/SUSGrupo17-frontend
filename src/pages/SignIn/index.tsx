@@ -36,7 +36,7 @@ const Login: React.FC = () => {
             console.log(token);
           }
         });
-        history.push('/menu');
+        history.push('/consulta/marcar');
       } catch (err) {
         console.log(err);
         setError('Dados incorretos!');
