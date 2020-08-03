@@ -8,9 +8,16 @@ import {
   FaSignOutAlt,
   FaAngleUp,
 } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { logout } from '../../services/auth';
 
 const History: React.FC = () => {
+  const history = useHistory();
+
+  function handleOnClick() {
+    logout();
+    history.push('/');
+  }
   return (
     <>
       <div id="wrapper">
@@ -230,6 +237,7 @@ const History: React.FC = () => {
                       href="#"
                       data-toggle="modal"
                       data-target="#logoutModal"
+                      onClick={handleOnClick}
                     >
                       <FaSignOutAlt />
                       Sair

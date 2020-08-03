@@ -1,4 +1,10 @@
-import React, { useState, FormEvent, ChangeEvent, FocusEvent } from 'react';
+import React, {
+  useState,
+  FormEvent,
+  ChangeEvent,
+  FocusEvent,
+  useEffect,
+} from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import './style.css';
 import swal from 'sweetalert2';
@@ -38,6 +44,13 @@ const Login: React.FC = () => {
       [name]: value,
     });
   }
+  useEffect(() => {
+    setFormData({
+      ...formData,
+      role: 'ADMIN',
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   function handleOnBlur(event: FocusEvent<HTMLInputElement>) {
     const { value } = event.target;
     if (!value) {
@@ -123,6 +136,7 @@ const Login: React.FC = () => {
           uf,
           role,
         };
+        console.log(data);
         await api.post('users/', data).then((response) => {
           if (response.status === 201) {
             swal.fire({
@@ -175,7 +189,13 @@ const Login: React.FC = () => {
                   className="needs-validation"
                   noValidate
                 >
-                  <input type="text" hidden value="ADMIN" name="role" />
+                  <input
+                    type="text"
+                    hidden
+                    value="ADMIN"
+                    name="role"
+                    id="role"
+                  />
                   <div className="row">
                     <div className="col-md-6 pr-1">
                       <div className="form-group">
@@ -183,8 +203,8 @@ const Login: React.FC = () => {
                           Nome<span> *</span>
                         </label>
                         <input
-                          id="name"
-                          name="name"
+                          id="firstName"
+                          name="firstName"
                           type="text"
                           className="form-control"
                           placeholder="Nome"

@@ -9,10 +9,19 @@ import {
   FaAngleUp,
 } from 'react-icons/fa';
 import './style.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Query from '../../components/Query/index';
 
+import { logout } from '../../services/auth';
+
 const Menu: React.FC = () => {
+  const history = useHistory();
+
+  function handleOnClick() {
+    logout();
+    history.push('/');
+  }
+
   return (
     <>
       <div id="wrapper">
@@ -232,6 +241,7 @@ const Menu: React.FC = () => {
                       href="#"
                       data-toggle="modal"
                       data-target="#logoutModal"
+                      onClick={handleOnClick}
                     >
                       <FaSignOutAlt />
                       Sair
