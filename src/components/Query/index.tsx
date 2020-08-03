@@ -79,14 +79,14 @@ const Query: React.FC = () => {
               <div className="col-md-6 pl-1">
                 <div className="form-group">
                   <label>
-                    Hospital<span> *</span>
+                    Unidade Básica de Saúde<span> *</span>
                   </label>
                   <input
                     id="hospital"
                     name="hospital"
                     type="text"
                     className="form-control"
-                    placeholder="Hospital"
+                    placeholder=" Unidade Básica de Saúde"
                     required
                     minLength={5}
                   />
